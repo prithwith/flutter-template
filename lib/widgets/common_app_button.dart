@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_template/core/utils/custom_icons.dart';
+import 'package:flutter_template/core/utils/common_icons.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:flutter_template/core/styles/app_colors.dart';
 import 'package:flutter_template/core/styles/app_text_style.dart';
 
-class AppButton extends StatelessWidget {
+class CommonAppButton extends StatelessWidget {
   final String text;
   final Function() onTap;
   final bool isOutline;
@@ -23,7 +23,7 @@ class AppButton extends StatelessWidget {
   final String? iconAsset;
   final IconData? iconData;
 
-  const AppButton({
+  const CommonAppButton({
     super.key,
     required this.text,
     required this.onTap,
@@ -79,14 +79,14 @@ class AppButton extends StatelessWidget {
                   iconAsset ?? "",
                   color: iconColor,
                   errorBuilder: (context, error, stackTrace) {
-                    return Icon(CustomIcons.image, color: AppColors.colorWhite);
+                    return Icon(CommonIcons.image, color: AppColors.colorWhite);
                   },
                 ),
                 10.horizontalSpace,
               ],
               if (iconData != null) ...[
                 Icon(
-                  iconData ?? CustomIcons.image,
+                  iconData ?? CommonIcons.image,
                   color: AppColors.colorWhite,
                 ),
                 10.horizontalSpace,

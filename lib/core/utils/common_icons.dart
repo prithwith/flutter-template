@@ -9,8 +9,8 @@
 
 import 'package:flutter/widgets.dart';
 
-abstract final class CustomIcons {
-  CustomIcons._();
+abstract final class CommonIcons {
+  CommonIcons._();
 
   static const String _fontFamilyFilled = 'broken_filled';
 

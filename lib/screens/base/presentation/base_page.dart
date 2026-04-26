@@ -8,7 +8,7 @@ import 'package:flutter_template/core/infrastructure/hive_database.dart';
 import 'package:flutter_template/core/shared/providers.dart';
 import 'package:flutter_template/core/styles/app_colors.dart';
 import 'package:flutter_template/core/styles/app_text_style.dart';
-import 'package:flutter_template/core/utils/custom_icons.dart';
+import 'package:flutter_template/core/utils/common_icons.dart';
 import 'package:flutter_template/screens/base/shared/providers.dart';
 import 'package:flutter_template/screens/splash/shared/provider.dart';
 
@@ -30,14 +30,14 @@ class _BasePageState extends ConsumerState<BasePage> {
 
   List<BottomNavigationBarItem> getBottomNavItems({required String userRole}) {
     return [
-      BottomNavigationBarItem(icon: Icon(CustomIcons.activity), label: 'Home'),
+      BottomNavigationBarItem(icon: Icon(CommonIcons.activity), label: 'Home'),
       BottomNavigationBarItem(
-        icon: Icon(CustomIcons.profile_2user),
+        icon: Icon(CommonIcons.profile_2user),
         label: 'Connections',
       ),
-      BottomNavigationBarItem(icon: Icon(CustomIcons.message), label: 'Chats'),
+      BottomNavigationBarItem(icon: Icon(CommonIcons.message), label: 'Chats'),
       BottomNavigationBarItem(
-        icon: Icon(CustomIcons.setting_2),
+        icon: Icon(CommonIcons.setting_2),
         label: 'Settings',
       ),
     ];

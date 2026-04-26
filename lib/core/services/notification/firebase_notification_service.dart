@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter_template/core/services/notification/local_notification_service.dart';
-import 'package:flutter_template/core/services/notification/notification_navigation.dart';
+import 'local_notification_service.dart';
+import 'notification_navigation.dart';
 
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {

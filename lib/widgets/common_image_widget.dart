@@ -1,8 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/core/styles/app_colors.dart';
+import 'package:flutter_template/core/utils/common_icons.dart';
 
-class ImageWidget extends StatelessWidget {
+class CommonImageWidget extends StatelessWidget {
   final BoxFit? fit;
   final IconData? icon;
   final double? height;
@@ -12,7 +13,7 @@ class ImageWidget extends StatelessWidget {
   final double? iconSize;
   final bool isFromSplash;
 
-  const ImageWidget({
+  const CommonImageWidget({
     super.key,
     this.fit,
     this.icon,
@@ -28,15 +29,17 @@ class ImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return imageUrl.isEmpty || imageUrl == 'null' || imageUrl.contains('null')
         ? Container(
+            height: height,
+            width: width,
             color: AppColors.colorWhite,
             child: icon == null
                 ? Icon(
-                    Icons.image_rounded,
+                    CommonIcons.gallery,
                     size: iconSize,
                     color: Colors.red.withValues(alpha: 0.5),
                   )
                 : Icon(
-                    icon ?? Icons.image_rounded,
+                    icon ?? CommonIcons.gallery,
                     color: Colors.red.withValues(alpha: 0.5),
                     size: 30,
                   ),
@@ -49,17 +52,19 @@ class ImageWidget extends StatelessWidget {
             imageUrl: imageUrl,
             placeholder: (context, loadingImage) {
               return Container(
+                height: height,
+                width: width,
                 color: AppColors.colorWhite,
                 child: isFromSplash
                     ? SizedBox.shrink()
                     : icon == null
                     ? Icon(
-                        Icons.image_rounded,
+                        CommonIcons.gallery,
                         size: iconSize,
                         color: Colors.red.withValues(alpha: 0.5),
                       )
                     : Icon(
-                        icon ?? Icons.image_rounded,
+                        icon ?? CommonIcons.gallery,
                         color: Colors.red.withValues(alpha: 0.5),
                         size: 30,
                       ),
@@ -67,17 +72,19 @@ class ImageWidget extends StatelessWidget {
             },
             errorWidget: (context, url, error) {
               return Container(
+                height: height,
+                width: width,
                 color: AppColors.colorWhite,
                 child: isFromSplash
                     ? SizedBox.shrink()
                     : icon == null
                     ? Icon(
-                        Icons.image_rounded,
+                        CommonIcons.gallery,
                         size: iconSize,
                         color: Colors.red.withValues(alpha: 0.5),
                       )
                     : Icon(
-                        icon ?? Icons.image_rounded,
+                        icon ?? CommonIcons.gallery,
                         color: Colors.red.withValues(alpha: 0.5),
                         size: 30,
                       ),
