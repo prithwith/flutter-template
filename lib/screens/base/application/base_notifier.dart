@@ -100,14 +100,14 @@ class BaseNotifier extends StateNotifier<BaseState> {
 
   Future<void> fetchAllUsers({
     bool loadMore = false,
-    RefreshController? usersController,
+    RefreshController? refreshController,
     VoidCallback? onExpiredToken,
   }) async {
     try {
       if (state.isfetchUsersLoading) return;
 
       if (loadMore && state.productsPaginationId == 0) {
-        usersController?.loadNoData();
+        refreshController?.loadNoData();
         return;
       }
 
@@ -138,23 +138,23 @@ class BaseNotifier extends StateNotifier<BaseState> {
 
         if (loadMore) {
           if ((response.data?["data"]["next_page"] ?? 0) == 0) {
-            usersController?.loadNoData();
+            refreshController?.loadNoData();
           } else {
-            usersController?.loadComplete();
+            refreshController?.loadComplete();
           }
         }
       } else if (response.statusCode == 401) {
         onExpiredToken?.call();
-        usersController?.loadFailed();
+        refreshController?.loadFailed();
         showToastMessage(response.data?["message"]);
       } else {
-        usersController?.loadFailed();
+        refreshController?.loadFailed();
         showToastMessage(response.data?["message"]);
       }
     } on DioException catch (e) {
       final error = DioExceptions.fromDioError(e).message;
       showToastMessage(error, errorMessage: e.message ?? '');
-      usersController?.loadFailed();
+      refreshController?.loadFailed();
     } finally {
       state = state.copyWith(isfetchUsersLoading: false);
     }

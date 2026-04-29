@@ -9,6 +9,7 @@ import 'package:flutter_template/core/shared/providers.dart';
 import 'package:flutter_template/core/styles/app_colors.dart';
 import 'package:flutter_template/core/styles/app_text_style.dart';
 import 'package:flutter_template/core/utils/common_icons.dart';
+import 'package:flutter_template/screens/base/presentation/pages/users_page.dart';
 import 'package:flutter_template/screens/base/shared/providers.dart';
 import 'package:flutter_template/screens/splash/shared/provider.dart';
 
@@ -24,8 +25,12 @@ class _BasePageState extends ConsumerState<BasePage> {
   late PageController pageController = PageController();
 
   List<Widget> getPages({required String userRole}) {
-    // return [HomePage(), ConnectionsPage(), ChatsPage(), SettingsPage()];
-    return [];
+    return [
+      const UsersPage(),
+      const Center(child: Text('Connections')),
+      const Center(child: Text('Chats')),
+      const Center(child: Text('Settings')),
+    ];
   }
 
   List<BottomNavigationBarItem> getBottomNavItems({required String userRole}) {
