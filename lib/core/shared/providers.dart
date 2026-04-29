@@ -1,5 +1,3 @@
-// import 'dart:typed_data';
-
 import 'package:dio/dio.dart';
 import 'package:flutter_google_maps_webservices/places.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,10 +13,8 @@ final placesProvider = Provider(
 );
 
 final locationUriProvider = Provider.family((ref, String query) {
-  Uri uri = Uri.https(
-    'maps.googleapis.com',
-    'maps/api/place/autocomplete/json',
-    {"input": query, "key": AppApiKeys.key},
-  );
-  return uri;
+  return Uri.https('maps.googleapis.com', 'maps/api/place/autocomplete/json', {
+    "input": query,
+    "key": AppApiKeys.key,
+  });
 });

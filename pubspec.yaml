@@ -27,23 +27,23 @@ dependencies:
   oktoast: ^3.4.0
   pinput: ^6.0.2
   cached_network_image: ^3.4.1
-  image_cropper: ^11.0.0
-  image_picker: ^1.2.1
+  image_cropper: ^12.2.1
+  image_picker: ^1.2.2
   permission_handler: ^12.0.1
   path_provider: ^2.1.5
   url_launcher: ^6.3.2
   flutter_google_maps_webservices: ^1.1.1
   geolocator: ^14.0.2
-  google_fonts: ^8.0.2
+  google_fonts: ^8.1.0
   pull_to_refresh: ^2.0.0
   carousel_slider: ^5.1.2
-  lottie: ^3.3.2
-  firebase_core: ^4.5.0
-  firebase_messaging: ^16.1.2
+  lottie: ^3.3.3
+  firebase_core: ^4.7.0
+  firebase_messaging: ^16.2.0
   shimmer: ^3.0.0
   app_settings: ^7.0.0
   flutter_local_notifications: ^21.0.0
-  connectivity_plus: ^7.0.0
+  connectivity_plus: ^7.1.1
   screen_protector: ^1.5.1
 
 dev_dependencies:
@@ -53,9 +53,9 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   flutter_launcher_icons: ^0.14.4
   auto_route_generator: ^10.5.0
-  build_runner: ^2.13.1
+  build_runner: ^2.14.1
   freezed: ^3.2.5
-  json_serializable: ^6.13.0
+  json_serializable: ^6.13.1
 
 flutter_launcher_icons:
   android: "launcher_icon"
