@@ -145,7 +145,7 @@ class _UserCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.colorBlack.withOpacity(0.05),
+            color: AppColors.colorBlack.withValues(alpha: 0.05),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -205,7 +205,7 @@ class _UserCard extends StatelessWidget {
       width: 48.w,
       height: 48.w,
       decoration: BoxDecoration(
-        color: AppColors.colorPrimary.withOpacity(0.1),
+        color: AppColors.colorPrimary.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(24.r),
       ),
       child: avatarUrl != null && avatarUrl.isNotEmpty
@@ -216,7 +216,7 @@ class _UserCard extends StatelessWidget {
                 width: 48.w,
                 height: 48.w,
                 fit: BoxFit.cover,
-                errorBuilder: (_, __, ___) => _buildInitials(initials),
+                errorBuilder: (_, _, _) => _buildInitials(initials),
               ),
             )
           : _buildInitials(initials),
@@ -240,7 +240,7 @@ class _UserCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
       decoration: BoxDecoration(
-        color: _getRoleColor().withOpacity(0.1),
+        color: _getRoleColor().withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(4.r),
       ),
       child: Text(
@@ -259,8 +259,8 @@ class _UserCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
       decoration: BoxDecoration(
         color: isActive
-            ? Colors.green.withOpacity(0.1)
-            : Colors.red.withOpacity(0.1),
+            ? Colors.green.withValues(alpha: 0.1)
+            : Colors.red.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(4.r),
       ),
       child: Text(
